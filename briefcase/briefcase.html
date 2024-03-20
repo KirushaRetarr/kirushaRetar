@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoCatch</title>
+    <link rel="shortcut icon" href="./img/Mini-icon.png" title="kosonicon" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./briefcase-styles.css" />
+  </head>
+  <body>
+    <!--Шапка сайта-->
+    <header>
+      <div class="upper-header">
+        <div class="upper-header__left-buttons">
+          <button>Язык</button>
+          <button>Валюта</button>
+          <button>Тема</button>
+        </div>
+        <div class="upper-header__right-buttons">
+          <a href="../auth/auth.html"><button>Войти</button></a>
+          <a href="../auth/auth.html"><button>Регистрация</button></a>
+        </div>
+      </div>
+      <div class="lower-header">
+        <picture
+          ><a href="index.html"><img src="../img/Logo.png" alt="Логотип" /></a
+        ></picture>
+        <div class="lower-header__buttons-search">
+          <a href="../index.html"><button>На главную</button></a>
+          <button>Избранное</button>
+          <form>
+            <input type="text" />
+            <button class="button-search" type="submit">
+              <img src="../img/Search.png" alt="Лупа" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <!--Основной контент-->
+    <main>
+      <div class="briefcase-wrapper">
+        <div class="briefcase-wrapper__selected-wrapper">
+          <div class="briefcase-wrapper__selected-wrapper__selected-brief">
+            <span class="briefcase-name">Binance</span>
+            <span>$67,728.03</span>
+          </div>
+          <div class="briefcase-wrapper__selected-wrapper__add">
+            <button class="add-transaction">Добавить транзакцию</button>
+          </div>
+        </div>
+        <div class="briefcase-wrapper__content-wrapper">
+          <div class="briefcase-wrapper__content-wrapper__main-content">
+            <div class="current-briefcase-price">
+              <h1>$68,348.37</h1>
+              <span class="profit">+$68,348.37(24ч)</span>
+            </div>
+            <div class="all-time-profit">
+              <span>Прибыль за все время</span>
+              <span class="profit">+$456.28</span>
+            </div>
+            <div class="main-graph">
+              <img src="./img/main-graph.png" alt="График" />
+            </div>
+            <div class="assets-list">
+              <span class="assets">Активы</span>
+              <table>
+                <colgroup>
+                  <!--Номер-->
+                  <col style="width: 200px" />
+                  <!--Тикер-->
+                  <col style="width: 200px" />
+                  <!--Цена-->
+                  <col style="width: 200px" />
+                  <!--Объем-->
+                  <col style="width: 200px" />
+                  <!--Капитализация-->
+                  <col style="width: 200px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <p>Имя</p>
+                    </th>
+                    <th>
+                      <p>Цена</p>
+                    </th>
+                    <th>
+                      <p>Активы</p>
+                    </th>
+                    <th>
+                      <p>Прибыль/убыток</p>
+                    </th>
+                    <th>
+                      <p>Действия</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bitcoin <span>BTC</span></td>
+                    <td>$68,834.77</td>
+                    <td>$68,844.13 <span>1 BTC</span></td>
+                    <td>+$456.28 <span class="profit">0.67%</span></td>
+                    <td><button class="add-plus">+</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Подвал сайта-->
+    <footer>
+      <div class="footer-logo">
+        <a href="index.html"><img src="../img/Logo.png" alt="Логотип" /></a>
+      </div>
+      <div class="footer-content">
+        <div class="footer-content__social">
+          <span>Социальные сети</span>
+          <ul>
+            <li>
+              <a target="_blank" href="https://twitter.com/" rel="noopener"
+                >X (Twitter)</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="#" rel="noopener">Сообщество</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://t.me/" rel="noopener"
+                >Telegram</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/"
+                rel="noopener"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://www.facebook.com/" rel="noopener"
+                >Facebook</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-content__support">
+          <span>Поддержка</span>
+          <ul>
+            <li>
+              <a target="_blank" href="#" rel="noopener">Форма запроса</a>
+            </li>
+            <li>
+              <a target="_blank" href="#">Поддержка</a>
+            </li>
+            <li>
+              <a target="_blank" href="#" class="sc-f70bb44c-0 iQEJet cmc-link"
+                >ЧАВО</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="#" rel="noopener">Глоссарий</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-meta__copyrigth">
+          © 2024 CryptoCatch. All rights reserved
+        </div>
+        <div class="footer-meta__social">
+          <a href="https://www.apple.com/app-store/"
+            ><img src="../img/AppStore-logo.svg" alt="AppStore"
+          /></a>
+          <a href="https://play.google.com/store/games?hl=ru&gl=US"
+            ><img src="../img/Playmarket-logo.png" alt="Playmarket"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
