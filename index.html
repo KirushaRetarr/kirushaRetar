@@ -1,42 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CryptoCatch</title>
-    <link rel="shortcut icon" href="./img/Mini-icon.png" title="kosonicon" >
-    <link rel="stylesheet" href="./reset.css" >
-    <link rel="stylesheet" href="./styles.css" >
+    <link rel="shortcut icon" href="./img/Mini-icon.png" title="kosonicon" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/slider.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <svg width="0" height="0">
-      <defs>
-        <mask id="mask" x="0" y="0" width="100%" height="100%">
-          <rect x="0" y="0" width="100%" height="100%" fill="red">
-          <circle cx="50%" cy="50%" r="100" fill="red">
-        </mask>
-      </defs>
-    </svg>
-    <div class="animations-lab-10">
-      <p>Анимационные svg:</p>
-      <svg class="animation1" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="40" fill="none" stroke="#7875fe" stroke-width="1">
-          <animate attributeName="r" from="0" to="20" dur="2s" begin="0s" repeatCount="indefinite">
-        </circle>
-      </svg>
-      <svg class="animation2" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" fill="none" stroke="#7875fe" stroke-width="4">
-          <animate attributeName="width" from="0" to="100" dur="2s" begin="0s" repeatCount="indefinite">
-        </rect>
-      </svg>
-      <svg class="animation3" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,0 100,100 0,100" fill="none" stroke="#7875fe" stroke-width="4">
-          <animate attributeName="points" dur="2s" begin="0s" repeatCount="indefinite"
-          values="50,0 100,100 0,100; 0,0 100,0 50,100; 50,0 100,100 0,100">
-        </polygon>
-      </svg>
-    </div>
     <!--Шапка сайта-->
     <header>
       <div class="upper-header">
@@ -61,14 +35,17 @@
         </div>
       </div>
       <div class="lower-header">
-        <picture><a href="index.html"><img src="./img/Logo.png" alt="Логотип"></a></picture>
+        <picture
+          ><a href="index.html"><img src="./img/Logo.png" alt="Логотип" /></a
+        ></picture>
         <div class="lower-header__buttons-search">
+          <a href="./map/map.html"><button>Карта</button></a>
           <a href="./briefcase/briefcase.html"><button>Портфель</button></a>
           <a href="./404.html"><button>Избранное</button></a>
           <form>
-            <input type="text" >
+            <input type="text" />
             <button class="button-search" type="submit">
-              <img src="./img/Search.png" alt="Лупа" >
+              <img src="./img/Search.png" alt="Лупа" />
             </button>
           </form>
         </div>
@@ -76,437 +53,494 @@
     </header>
     <!--Основной контент-->
     <main>
-      <table>
-        <colgroup>
-          <!--Номер-->
-          <col style="width: 50px" >
-          <!--Тикер-->
-          <col style="width: 200px" >
-          <!--Цена-->
-          <col >
-          <!--Объем-->
-          <col style="width: 200px" >
-          <!--Капитализация-->
-          <col style="width: 200px" >
-          <!--График-->
-          <col >
-        </colgroup>
-        <thead>
-          <tr>
-            <th>
-              <p>№</p>
-            </th>
-            <th>
-              <p>Тикер</p>
-            </th>
-            <th>
-              <p>Цена</p>
-            </th>
-            <th>
-              <p>Объем</p>
-            </th>
-            <th>
-              <p>Рыночная капитализация</p>
-            </th>
-            <th>
-              <p>Последние 7 дней</p>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <p>1</p>
-            </td>
-            <td>
-              <p>Bitcoin <span>BTC</span></p>
-            </td>
-            <td>
-              <p>$71,729.69</p>
-            </td>
-            <td>
-              <p>$60,703,260,690</p>
-            </td>
-            <td>
-              <p>$1,409,915,788,077</p>
-            </td>
-            <td>
-              <img src="./img/Bitcoin-graph.svg" alt="Bitcoin" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>2</p>
-            </td>
-            <td>
-              <p>Ethereum <span>ETH</span></p>
-            </td>
-            <td>
-              <p>$3,880.42</p>
-            </td>
-            <td>
-              <p>$25,631,276,135</p>
-            </td>
-            <td>
-              <p>$465,981,220,185</p>
-            </td>
-            <td>
-              <img src="./img/Ethereum-graph.svg" alt="Ethereum" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>3</p>
-            </td>
-            <td>
-              <p>Tether USDt <span>USDT</span></p>
-            </td>
-            <td>
-              <p>$0.9993</p>
-            </td>
-            <td>
-              <p>$117,643,457,300</p>
-            </td>
-            <td>
-              <p>$103,066,046,552</p>
-            </td>
-            <td>
-              <img src="./img/TetherUSDT-graph.svg" alt="Tether" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>4</p>
-            </td>
-            <td>
-              <p>BNB <span>BNB</span></p>
-            </td>
-            <td>
-              <p>$600.80</p>
-            </td>
-            <td>
-              <p>$4,692,309,259</p>
-            </td>
-            <td>
-              <p>$90,158,838,123</p>
-            </td>
-            <td>
-              <img src="./img/BNB-graph.svg" alt="BNB" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>5</p>
-            </td>
-            <td>
-              <p>Solana <span>SOL</span></p>
-            </td>
-            <td>
-              <p>$183.87</p>
-            </td>
-            <td>
-              <p>$8,918,319,259</p>
-            </td>
-            <td>
-              <p>$82,100,964,202</p>
-            </td>
-            <td>
-              <img src="./img/Solana-graph.svg" alt="Solana" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>6</p>
-            </td>
-            <td>
-              <p>XRP <span>XRP</span></p>
-            </td>
-            <td>
-              <p>$0.6691</p>
-            </td>
-            <td>
-              <p>$3,349,724,314</p>
-            </td>
-            <td>
-              <p>$36,746,177,785</p>
-            </td>
-            <td>
-              <img src="./img/XRP-graph.svg" alt="XRP" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>7</p>
-            </td>
-            <td>
-              <p>USDC <span>USDC</span></p>
-            </td>
-            <td>
-              <p>$0.9999</p>
-            </td>
-            <td>
-              <p>$13,618,447,705</p>
-            </td>
-            <td>
-              <p>$30,619,442,851</p>
-            </td>
-            <td>
-              <img src="./img/USDC-graph.svg" alt="USDC" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>8</p>
-            </td>
-            <td>
-              <p>Cardano <span>ADA</span></p>
-            </td>
-            <td>
-              <p>$0.7565</p>
-            </td>
-            <td>
-              <p>$1,615,615,147</p>
-            </td>
-            <td>
-              <p>$27,041,766,280</p>
-            </td>
-            <td>
-              <img src="./img/Cardano-graph.svg" alt="Cardano" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>9</p>
-            </td>
-            <td>
-              <p>Dogecoin <span>DOGE</span></p>
-            </td>
-            <td>
-              <p>$0.1488</p>
-            </td>
-            <td>
-              <p>$2,833,786,663</p>
-            </td>
-            <td>
-              <p>$21,344,256,314</p>
-            </td>
-            <td>
-              <img src="./img/Dogecoin.svg" alt="Dodgecoin" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>10</p>
-            </td>
-            <td>
-              <p>Avalanche <span>AVAX</span></p>
-            </td>
-            <td>
-              <p>$55.67</p>
-            </td>
-            <td>
-              <p>$1,808,511,585</p>
-            </td>
-            <td>
-              <p>$20,999,347,310</p>
-            </td>
-            <td>
-              <img src="./img/Avalanche-graph.svg" alt="Avalanche" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>11</p>
-            </td>
-            <td>
-              <p>Shiba <span>Inu</span></p>
-            </td>
-            <td>
-              <p>$0.00002695</p>
-            </td>
-            <td>
-              <p>$2,514,859,756</p>
-            </td>
-            <td>
-              <p>$15,883,319,902</p>
-            </td>
-            <td>
-              <img src="./img/Shiba-graph.svg" alt="Shiba" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>12</p>
-            </td>
-            <td>
-              <p>Polkadot <span>DOT</span></p>
-            </td>
-            <td>
-              <p>$9.91</p>
-            </td>
-            <td>
-              <p>$562,198,335</p>
-            </td>
-            <td>
-              <p>$12,789,768,733</p>
-            </td>
-            <td>
-              <img src="./img/Polkadot-graph.svg" alt="Polkadot" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>13</p>
-            </td>
-            <td>
-              <p>Toncoin <span>TON</span></p>
-            </td>
-            <td>
-              <p>$3.64</p>
-            </td>
-            <td>
-              <p>$98,603,392</p>
-            </td>
-            <td>
-              <p>$12,650,950,830</p>
-            </td>
-            <td>
-              <img src="./img/Toncoin-graph.svg" alt="Toncoin" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>14</p>
-            </td>
-            <td>
-              <p>Tron <span>TRX</span></p>
-            </td>
-            <td>
-              <p>$0.1253</p>
-            </td>
-            <td>
-              <p>$385,626,458</p>
-            </td>
-            <td>
-              <p>$11,009,980,607</p>
-            </td>
-            <td>
-              <img src="./img/TRON-graph.svg" alt="Tron" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>15</p>
-            </td>
-            <td>
-              <p>Chainlink <span>LINK</span></p>
-            </td>
-            <td>
-              <p>$18.42</p>
-            </td>
-            <td>
-              <p>$693,437,407</p>
-            </td>
-            <td>
-              <p>$10,795,143,490</p>
-            </td>
-            <td>
-              <img src="./img/Chainlink-graph.svg" alt="Chainlink" >
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>16</p>
-            </td>
-            <td>
-              <p>Polygon <span>MATIC</span></p>
-            </td>
-            <td>
-              <p>$1.07</p>
-            </td>
-            <td>
-              <p>$741,186,090</p>
-            </td>
-            <td>
-              <p>$10,579,531,450</p>
-            </td>
-            <td>
-              <img src="./img/Polygon-graph.svg" alt="Polygon" >
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-    <!--Лабораторная 12-->
-    <div class="lab-wrapper">
-      <h2>Лабораторная работа 12</h2>
-      <a href="#" onclick="openPopup(); return false;">Открыть новое окно с текстом</a>
-      <div class="feedback-wrapper">
-        <h2>Форма обратной связи</h2>
-        <form id="feedbackForm" onsubmit="return validateForm()">
-            <div>
-                <label for="name">Имя:</label>
-                <input placeholder="Введите имя" type="text" id="name" name="name" required>
+      <!--Слайдер-->
+      <div class="slider" id="slider">
+        <div class="slider-content" id="slider-content">
+          <div class="sl-img">
+            <div class="sl-img-item sl-img-item-active" data-id="1">
+              <img src="./img/Bitcoin-slider.png" />
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input placeholder="Введите адрес электронной почты" type="email" id="email" name="email" required>
+            <div class="sl-img-item" data-id="2">
+              <img src="./img/Ethereum-slider.jpg" />
             </div>
-            <div>
-              <label for="message">Сообщение:</label>
-              <textarea placeholder="Введите ваше сообщение" id="message" name="message" rows="4" maxlength="500" required></textarea>
-              <p id="charCount">Осталось символов: 200</p>
+            <div class="sl-img-item" data-id="3">
+              <img src="./img/Solana-slider.webp" />
+            </div>
+            <div class="sl-img-item" data-id="4">
+              <img src="./img/Cardano-slider.webp" />
+            </div>
+            <div class="sl-img-item" data-id="5">
+              <img src="./img/Polkadot-slider.jpg" />
+            </div>
+            <div class="sl-img-item" data-id="6">
+              <img src="./img/Chainlink-slider.jpg" />
+            </div>
           </div>
-            <div>
-                <label for="subject">Тема обращения:</label>
-                <select id="subject" name="subject" required>
-                    <option value="">Выберите тему</option>
-                    <option value="technical">Техническая поддержка</option>
-                    <option value="billing">Вопросы по оплате</option>
-                    <option value="feedback">Обратная связь</option>
-                </select>
+          <div class="sl-text">
+            <div class="sl-text-item sl-text-item-active" data-id="1">
+              <div class="sl-text-item-head">
+                <h3>#1 Bitcoin (BTC)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Это первая и самая известная криптовалюта, созданная в 2009
+                  году под псевдонимом Сатоши Накамото. Он представляет собой
+                  децентрализованную цифровую валюту, которая не зависит от
+                  центральных банков или правительств.
+                </p>
+              </div>
             </div>
-            <div>
-                <label for="subscribe">Подписаться на новости:</label>
-                <input type="checkbox" id="subscribe" name="subscribe">
+            <div class="sl-text-item" data-id="2">
+              <div class="sl-text-item-head">
+                <h3>#2 Ethereum (ETH)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Ethereum представляет собой платформу для смарт-контрактов и
+                  децентрализованных приложений (DApps), позволяя разработчикам
+                  создавать и развертывать собственные приложения на базе
+                  блокчейна.
+                </p>
+              </div>
             </div>
-        </form>
-        <div id="errorMessages"></div>
-        <button onclick="saveUserData()">Отправить</button>
-        <button onclick="displayUserData()">Отобразить историю</button>
-        <button onclick="clearUserData()">Очистить историю</button>
-      </div>
-      <div id="userData"></div>
-    </div>
-    <!--Лабораторная 13-->
-    <div class="lab-wrapper">
-      <h2>Лабораторная 13</h2>
-      <a href="./lab13/map.html"><button>Карта</button></a>
-      <div id="container-cat">
-        <div id="text">
-            <h2>Рассказ про <span class="keyword">котов</span> и мышей</h2>
-            <p>Однажды в доме жили три <span class="keyword">кота</span>: Мурзик, Барсик и Васька. Эти <span class="keyword">коты</span> были настоящими охотниками и всегда охотились на мышей.</p>
-            <p>Мурзик был самым ловким из <span class="keyword">котов</span>. Он умел скрываться в тени и подкрадываться к мышам незаметно.</p>
-            <p>Барсик был самым сильным <span class="keyword">котом</span>. Он мог прыгнуть на мышь с большой высоты и поймать её в лапы.</p>
-            <p>А Васька был самым ленивым. Он предпочитал лежать на солнышке и только иногда притворяться, что охотится.</p>
+            <div class="sl-text-item" data-id="3">
+              <div class="sl-text-item-head">
+                <h3>#3 Solana (SOL)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Solana привлекла внимание благодаря своей высокой пропускной
+                  способности и низким комиссиям за транзакции.
+                </p>
+              </div>
+            </div>
+            <div class="sl-text-item" data-id="4">
+              <div class="sl-text-item-head">
+                <h3>#4 Cardano (ADA)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Основной фокус проекта Cardano - обеспечение устойчивости,
+                  масштабируемости и интероперабельности блокчейнов.
+                </p>
+              </div>
+            </div>
+            <div class="sl-text-item" data-id="5">
+              <div class="sl-text-item-head">
+                <h3>#5 Polkadot (DOT)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Polkadot использует концепцию параллельных цепочек (подцепей),
+                  что позволяет достичь высокой пропускной способности и
+                  масштабируемости.
+                </p>
+              </div>
+            </div>
+            <div class="sl-text-item" data-id="6">
+              <div class="sl-text-item-head">
+                <h3>#6 Chainlink (LINK)</h3>
+              </div>
+              <div class="sl-text-item-info">
+                <p>
+                  Основной целью Chainlink является обеспечение доверия и
+                  безопасности при обмене данными между внешними источниками и
+                  блокчейном.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="image">
-            <img src="./img/cat.jpeg" alt="Кот">
+        <div class="slider__nav">
+          <div class="sl-nav-arrows">
+            <div class="sl-nav-arrow sl-nav-arrow-left" id="left">Лево</div>
+            <div class="sl-nav-arrow sl-nav-arrow-right" id="right">Право</div>
+          </div>
+          <div class="sl-nav-dots" id="sl-nav-dots">
+            <div class="sl-nav-dot sl-nav-dot-active" data-id="1"></div>
+            <div class="sl-nav-dot" data-id="2"></div>
+            <div class="sl-nav-dot" data-id="3"></div>
+            <div class="sl-nav-dot" data-id="4"></div>
+            <div class="sl-nav-dot" data-id="5"></div>
+            <div class="sl-nav-dot" data-id="6"></div>
+          </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./lab13/js/cat.js"></script>
       </div>
-    </div>
-    <!--Лабораторная 14-->
-    <div class="lab-wrapper">
-      <h2>Лабораторная работа 14</h2>
-      <canvas id="cryptoChart" width="200" height="200"></canvas>
-      <script src="./Lab14/diagramm.js"></script>
-    </div>
+      <div class="table-container">
+        <table class="animated-table">
+          <colgroup>
+            <!--Номер-->
+            <col style="width: 50px" />
+            <!--Тикер-->
+            <col style="width: 200px" />
+            <!--Цена-->
+            <col />
+            <!--Объем-->
+            <col style="width: 200px" />
+            <!--Капитализация-->
+            <col style="width: 200px" />
+            <!--График-->
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>
+                <p>№</p>
+              </th>
+              <th>
+                <p>Тикер</p>
+              </th>
+              <th>
+                <p>Цена</p>
+              </th>
+              <th>
+                <p>Объем</p>
+              </th>
+              <th>
+                <p>Рыночная капитализация</p>
+              </th>
+              <th>
+                <p>Последние 7 дней</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>1</p>
+              </td>
+              <td>
+                <p>Bitcoin <span>BTC</span></p>
+              </td>
+              <td>
+                <p>$71,729.69</p>
+              </td>
+              <td>
+                <p>$60,703,260,690</p>
+              </td>
+              <td>
+                <p>$1,409,915,788,077</p>
+              </td>
+              <td>
+                <img src="./img/Bitcoin-graph.svg" alt="Bitcoin" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>2</p>
+              </td>
+              <td>
+                <p>Ethereum <span>ETH</span></p>
+              </td>
+              <td>
+                <p>$3,880.42</p>
+              </td>
+              <td>
+                <p>$25,631,276,135</p>
+              </td>
+              <td>
+                <p>$465,981,220,185</p>
+              </td>
+              <td>
+                <img src="./img/Ethereum-graph.svg" alt="Ethereum" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>3</p>
+              </td>
+              <td>
+                <p>Tether USDt <span>USDT</span></p>
+              </td>
+              <td>
+                <p>$0.9993</p>
+              </td>
+              <td>
+                <p>$117,643,457,300</p>
+              </td>
+              <td>
+                <p>$103,066,046,552</p>
+              </td>
+              <td>
+                <img src="./img/TetherUSDT-graph.svg" alt="Tether" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>4</p>
+              </td>
+              <td>
+                <p>BNB <span>BNB</span></p>
+              </td>
+              <td>
+                <p>$600.80</p>
+              </td>
+              <td>
+                <p>$4,692,309,259</p>
+              </td>
+              <td>
+                <p>$90,158,838,123</p>
+              </td>
+              <td>
+                <img src="./img/BNB-graph.svg" alt="BNB" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>5</p>
+              </td>
+              <td>
+                <p>Solana <span>SOL</span></p>
+              </td>
+              <td>
+                <p>$183.87</p>
+              </td>
+              <td>
+                <p>$8,918,319,259</p>
+              </td>
+              <td>
+                <p>$82,100,964,202</p>
+              </td>
+              <td>
+                <img src="./img/Solana-graph.svg" alt="Solana" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>6</p>
+              </td>
+              <td>
+                <p>XRP <span>XRP</span></p>
+              </td>
+              <td>
+                <p>$0.6691</p>
+              </td>
+              <td>
+                <p>$3,349,724,314</p>
+              </td>
+              <td>
+                <p>$36,746,177,785</p>
+              </td>
+              <td>
+                <img src="./img/XRP-graph.svg" alt="XRP" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>7</p>
+              </td>
+              <td>
+                <p>USDC <span>USDC</span></p>
+              </td>
+              <td>
+                <p>$0.9999</p>
+              </td>
+              <td>
+                <p>$13,618,447,705</p>
+              </td>
+              <td>
+                <p>$30,619,442,851</p>
+              </td>
+              <td>
+                <img src="./img/USDC-graph.svg" alt="USDC" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>8</p>
+              </td>
+              <td>
+                <p>Cardano <span>ADA</span></p>
+              </td>
+              <td>
+                <p>$0.7565</p>
+              </td>
+              <td>
+                <p>$1,615,615,147</p>
+              </td>
+              <td>
+                <p>$27,041,766,280</p>
+              </td>
+              <td>
+                <img src="./img/Cardano-graph.svg" alt="Cardano" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>9</p>
+              </td>
+              <td>
+                <p>Dogecoin <span>DOGE</span></p>
+              </td>
+              <td>
+                <p>$0.1488</p>
+              </td>
+              <td>
+                <p>$2,833,786,663</p>
+              </td>
+              <td>
+                <p>$21,344,256,314</p>
+              </td>
+              <td>
+                <img src="./img/Dogecoin.svg" alt="Dodgecoin" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>10</p>
+              </td>
+              <td>
+                <p>Avalanche <span>AVAX</span></p>
+              </td>
+              <td>
+                <p>$55.67</p>
+              </td>
+              <td>
+                <p>$1,808,511,585</p>
+              </td>
+              <td>
+                <p>$20,999,347,310</p>
+              </td>
+              <td>
+                <img src="./img/Avalanche-graph.svg" alt="Avalanche" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>11</p>
+              </td>
+              <td>
+                <p>Shiba <span>Inu</span></p>
+              </td>
+              <td>
+                <p>$0.00002695</p>
+              </td>
+              <td>
+                <p>$2,514,859,756</p>
+              </td>
+              <td>
+                <p>$15,883,319,902</p>
+              </td>
+              <td>
+                <img src="./img/Shiba-graph.svg" alt="Shiba" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>12</p>
+              </td>
+              <td>
+                <p>Polkadot <span>DOT</span></p>
+              </td>
+              <td>
+                <p>$9.91</p>
+              </td>
+              <td>
+                <p>$562,198,335</p>
+              </td>
+              <td>
+                <p>$12,789,768,733</p>
+              </td>
+              <td>
+                <img src="./img/Polkadot-graph.svg" alt="Polkadot" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>13</p>
+              </td>
+              <td>
+                <p>Toncoin <span>TON</span></p>
+              </td>
+              <td>
+                <p>$3.64</p>
+              </td>
+              <td>
+                <p>$98,603,392</p>
+              </td>
+              <td>
+                <p>$12,650,950,830</p>
+              </td>
+              <td>
+                <img src="./img/Toncoin-graph.svg" alt="Toncoin" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>14</p>
+              </td>
+              <td>
+                <p>Tron <span>TRX</span></p>
+              </td>
+              <td>
+                <p>$0.1253</p>
+              </td>
+              <td>
+                <p>$385,626,458</p>
+              </td>
+              <td>
+                <p>$11,009,980,607</p>
+              </td>
+              <td>
+                <img src="./img/TRON-graph.svg" alt="Tron" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>15</p>
+              </td>
+              <td>
+                <p>Chainlink <span>LINK</span></p>
+              </td>
+              <td>
+                <p>$18.42</p>
+              </td>
+              <td>
+                <p>$693,437,407</p>
+              </td>
+              <td>
+                <p>$10,795,143,490</p>
+              </td>
+              <td>
+                <img src="./img/Chainlink-graph.svg" alt="Chainlink" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>16</p>
+              </td>
+              <td>
+                <p>Polygon <span>MATIC</span></p>
+              </td>
+              <td>
+                <p>$1.07</p>
+              </td>
+              <td>
+                <p>$741,186,090</p>
+              </td>
+              <td>
+                <p>$10,579,531,450</p>
+              </td>
+              <td>
+                <img src="./img/Polygon-graph.svg" alt="Polygon" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Диаграмма-->
+      <div class="diagramm-wrapper">
+        <h2>Доля токенов на рынке криптовалют</h2>
+        <canvas id="cryptoChart" width="200" height="200"></canvas>
+        <script src="./js/diagramm.js"></script>
+      </div>
+      <a style="margin-top: 30px;" href="./lab15/lab15.html"><button>Перейти на лабу 15</button></a>
+      <a style="margin-top: 30px;" href="./lab15/lab15.html"><button>Перейти на лабу 16</button></a>
+    </main>
     <!--Подвал сайта-->
     <footer>
       <div class="footer-logo">
-        <a href="index.html"><img src="./img/Logo.png" alt="Логотип" style="mask: url(#mask);"></a>
+        <a href="index.html"><img src="./img/Logo.png" alt="Логотип" /></a>
       </div>
       <div class="footer-content">
         <div class="footer-content__social">
@@ -549,10 +583,12 @@
           <span>Поддержка</span>
           <ul>
             <li>
-              <a target="_blank" href="#" rel="noopener">Форма запроса</a>
+              <a target="_blank" href="./feedback/feedback.html" rel="noopener"
+                >Форма обратной связи</a
+              >
             </li>
             <li>
-              <a target="_blank" href="#">Поддержка</a>
+              <a target="_blank" href="./feedback/feedback.html">Поддержка</a>
             </li>
             <li>
               <a target="_blank" href="#" class="sc-f70bb44c-0 iQEJet cmc-link"
@@ -572,10 +608,10 @@
         <div class="footer-meta__social">
           <a href="https://www.apple.com/app-store/"
             ><img src="./img/AppStore-logo.svg" alt="AppStore"
-          ></a>
+          /></a>
           <a href="https://play.google.com/store/games?hl=ru&gl=US"
             ><img src="./img/Playmarket-logo.png" alt="Playmarket"
-          ></a>
+          /></a>
         </div>
       </div>
     </footer>

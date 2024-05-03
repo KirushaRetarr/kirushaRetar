@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+}
+
+/*Стилизация кнопок*/
+button {
+    color: #7875fe;
+    background-color: transparent;
+    border: 1px solid #7875fe;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    font-family: "Commissioner", sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  /*Стилизация кнопок при наведении*/
+  button:hover {
+    color: #fff;
+    background-color: #7875fe;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+
+.mountain {
+    transform: scale(0.1);
+}
+
+#map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #7875fe;
+    border-radius: 10px;
+    width: 700px;
+    height: 100%;
+}
+
+.steiermark:hover {
+    cursor: pointer;
+    fill: #f2e74f;
+}
+
+.burgenland:hover {
+    cursor: pointer;
+    fill: #6958da;
+}
+
+.karnten:hover {
+    cursor: pointer;
+    fill: #31842e;
+}
+
+.niederosterreich:hover {
+    cursor: pointer;
+    fill: #63fdc4;
+}
+
+.oberosterreich:hover {
+    cursor: pointer;
+    fill: #700e18;
+}
+
+.salzburg:hover {
+    cursor: pointer;
+    fill: #c02c8f;
+}
+
+.tirol:hover {
+    cursor: pointer;
+    fill: #a68a6b;
+}
+
+.vorarlberg:hover {
+    cursor: pointer;
+    fill: #9b3c0d;
+}
+
+.wien:hover {
+    cursor: pointer;
+    fill: #6494f2;
+}
+
+.info-popup {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 100; 
+    display: none; 
+}
+

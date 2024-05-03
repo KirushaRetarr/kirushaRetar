@@ -1,146 +1,246 @@
-//Лабораторная 12
-function openPopup() {
-  var popupText =
-    "Это новое окно с текстом.";
-  window
-    .open("", "_blank", "width=400,height=200")
-    .document.write("<p>" + popupText + "</p>");
+// Анимация таблицы
+$(window).scroll(function() {
+    var scrollTop = $(this).scrollTop();
+    var elementOffset = $('.table').offset().top;
+    var windowHeight = $(window).height();
+    if (scrollTop > elementOffset - windowHeight + 200) {
+      $('.table').addClass('animate');
+    }
+  });
+
+// Слайдер
+function lerp({ x, y }, { x: targetX, y: targetY }) {
+    const fraction = 0.1; 
+    x += (targetX - x) * fraction;
+    y += (targetY - y) * fraction;
+    return { x, y };
 }
-
-function validateForm() {
-    var form = document.getElementById("feedbackForm");
-    var name = form.elements["name"].value.trim();
-    var email = form.elements["email"].value.trim();
-    var message = form.elements["message"].value.trim();
-    var subject = form.elements["subject"].value;
-    
-    var errorMessages = [];
-    
-    if (name === "") {
-        errorMessages.push("Введите ваше имя.");
+class Slider {
+    constructor (el) {
+        const imgClass = this.IMG_CLASS = 'sl-img-item';
+        const textClass = this.TEXT_CLASS = 'sl-text-item';
+        const activeImgClass = this.ACTIVE_IMG_CLASS = `${imgClass}-active`;
+        const activeTextClass = this.ACTIVE_TEXT_CLASS =  `${textClass}-active`;
+        this.el = el;
+        this.contentE0 = document.getElementById('slider');
+        this.contentEl = document.getElementById('slider-content');
+        this.onMouseMove = this.onMouseMove.bind(this);
+        this.activeImg = el.getElementsByClassName(activeImgClass);
+        this.activeText = el.getElementsByClassName(activeTextClass);
+        this.images = el.getElementsByTagName('img');
+        document.getElementById('sl-nav-dots').addEventListener('click', this.onDotClick.bind(this));
+        document.getElementById('left').addEventListener('click', this.prev.bind(this));
+        document.getElementById('right').addEventListener('click', this.next.bind(this));
+        window.addEventListener('resize', this.onResize.bind(this));
+        this.onResize();
+        this.length = this.images.length;
+        this.lastX = this.lastY = this.targetX = this.targetY = 0;
     }
-    
-    if (email === "") {
-        errorMessages.push("Введите ваш email.");
-    } else if (!validateEmail(email)) {
-        errorMessages.push("Введите корректный email.");
+    onResize () {
+        const htmlStyles = getComputedStyle(document.documentElement);
+        const mobileBreakpoint =  htmlStyles.getPropertyValue('--mobile-bkp');
+        const isMobile = this.isMobile = matchMedia(`only screen and (max-width: ${mobileBreakpoint})`).matches;
+        this.halfWidth = this.contentE0.offsetWidth / 2;
+        this.halfHeight = this.contentE0.offsetHeight / 2;
+        this.zDistance = htmlStyles.getPropertyValue('--z-distance');
+        if (!isMobile && !this.mouseWatched) {
+            this.mouseWatched = true;
+            this.el.addEventListener('mousemove', this.onMouseMove);
+            this.el.style.setProperty(
+                '--img-prev', 
+                `url(${this.images[+this.activeImg[0].dataset.id - 1].src})`
+            );
+            this.contentEl.style.setProperty('transform', `translateZ(${this.zDistance})`);
+            } else if (isMobile && this.mouseWatched) {
+            this.mouseWatched = false;
+            this.el.removeEventListener('mousemove', this.onMouseMove);
+            this.contentEl.style.setProperty('transform', 'none');
+        }
     }
-    
-    if (message === "") {
-        errorMessages.push("Введите ваше сообщение.");
+    getMouseCoefficients ({ clientX, clientY } = {}) {
+        const halfWidth = this.halfWidth;
+        const halfHeight = this.halfHeight;
+        const xCoeff = ((clientX || this.targetX) - halfWidth) / halfWidth;
+        const yCoeff = (halfHeight - (clientY || this.targetY)) / halfHeight;
+        return { xCoeff,  yCoeff }
     }
-    
-    if (subject === "") {
-        errorMessages.push("Выберите тему обращения.");
+    onMouseMove ({ clientX, clientY }) { 
+        this.targetX = clientX - this.contentE0.getBoundingClientRect().left;
+        this.targetY = clientY - this.contentE0.getBoundingClientRect().top;
+        if (!this.animationRunning) {
+            this.animationRunning = true;
+            this.runAnimation();
+        }
     }
-    
-    if (errorMessages.length > 0) {
-        displayErrors(errorMessages);
-        return false;
-    }
-    
-    return true;
-}
-
-function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
-
-function displayErrors(errors) {
-    var errorContainer = document.getElementById("errorMessages");
-    errorContainer.innerHTML = "";
-    
-    var ul = document.createElement("ul");
-    errors.forEach(function(error) {
-        var li = document.createElement("li");
-        li.textContent = error;
-        ul.appendChild(li);
-    });
-    
-    errorContainer.appendChild(ul);
-}
-
-// Массив для хранения данных пользователя
-var userDataArray = [];
-
-function saveUserData() {
-    var form = document.getElementById("feedbackForm");
-
-    
-    if (!validateForm()) {
-        return; // Если форма не валидна, прерываем выполнение функции
-    }
-
-    var userData = {
-        name: form.elements["name"].value.trim(),
-        email: form.elements["email"].value.trim(),
-        message: form.elements["message"].value.trim(),
-        subject: form.elements["subject"].value,
-        subscribe: form.elements["subscribe"].checked
-    };
-
-    var userDataArray = JSON.parse(localStorage.getItem("userDataArray")) || [];
-    userDataArray.push(userData);
-    localStorage.setItem("userDataArray", JSON.stringify(userDataArray));
-    form.reset();
-}
-
-function displayUserData() {
-    var userDataContainer = document.getElementById("userData");
-    userDataContainer.innerHTML = "";
-
-    var userDataArray = JSON.parse(localStorage.getItem("userDataArray"));
-
-    var table = document.createElement("table");
-    table.classList.add("userDataTable");
-
-    var thead = document.createElement("thead");
-    var tbody = document.createElement("tbody");
-
-    var headers = ["Name", "Email", "Message", "Subject", "Subscribe"];
-    var tr = document.createElement("tr");
-    headers.forEach(function(headerText) {
-        var th = document.createElement("th");
-        th.textContent = headerText;
-        tr.appendChild(th);
-    });
-    thead.appendChild(tr);
-
-    userDataArray.forEach(function(userData) {
-        tr = document.createElement("tr");
-        headers.forEach(function(header) {
-            var td = document.createElement("td");
-            td.textContent = userData[header.toLowerCase()];
-            tr.appendChild(td);
+    runAnimation () {
+        if (this.animationStopped) {
+            this.animationRunning = false;
+            return;
+        }
+        const maxX = 10;
+        const maxY = 10;
+        const newPos = lerp({
+            x: this.lastX,
+            y: this.lastY
+            }, {
+            x: this.targetX,
+            y: this.targetY
         });
-        tbody.appendChild(tr);
+        const { xCoeff, yCoeff } = this.getMouseCoefficients({
+            clientX: newPos.x, 
+            clientY: newPos.y
+        });  
+        this.lastX = newPos.x;
+        this.lastY = newPos.y;
+        this.positionImage({ xCoeff, yCoeff }); 
+        this.contentEl.style.setProperty('transform', `
+            translateZ(${this.zDistance})
+            rotateX(${maxY * yCoeff}deg)
+            rotateY(${maxX * xCoeff}deg)
+        `);
+        if (this.reachedFinalPoint) {
+            this.animationRunning = false;
+            } else {
+            requestAnimationFrame(this.runAnimation.bind(this)); 
+        }
+    }
+    get reachedFinalPoint () {
+        const lastX = ~~this.lastX;
+        const lastY = ~~this.lastY;
+        const targetX = this.targetX;
+        const targetY = this.targetY;
+        return (lastX == targetX || lastX - 1 == targetX || lastX + 1 == targetX) 
+        && (lastY == targetY || lastY - 1 == targetY || lastY + 1 == targetY);
+    }
+    positionImage ({ xCoeff, yCoeff }) {
+        const maxImgOffset = 1;
+        const currentImage = this.activeImg[0].children[0];
+        currentImage.style.setProperty('transform', `
+            translateX(${maxImgOffset * -xCoeff}em)
+            translateY(${maxImgOffset * yCoeff}em)
+        `);  
+    }
+    onDotClick ({ target }) {
+        if (this.inTransit) return;
+        const dot = target.closest('.sl-nav-dot');
+        if (!dot) return;
+        const nextId = dot.dataset.id;
+        const currentId = this.activeImg[0].dataset.id;
+        if (currentId == nextId) return;
+        this.startTransition(nextId);
+    }
+    transitionItem (nextId) {
+        function onImageTransitionEnd (e) {
+            e.stopPropagation();
+            nextImg.classList.remove(transitClass);
+            self.inTransit = false;
+            this.className = imgClass;
+            this.removeEventListener('transitionend', onImageTransitionEnd);
+        }
+        const self = this;
+        const el = this.el;
+        const currentImg = this.activeImg[0];
+        const currentId = currentImg.dataset.id;
+        const imgClass = this.IMG_CLASS;
+        const textClass = this.TEXT_CLASS;
+        const activeImgClass = this.ACTIVE_IMG_CLASS;
+        const activeTextClass = this.ACTIVE_TEXT_CLASS;
+        const subActiveClass = `${imgClass}-subactive`;
+        const transitClass = `${imgClass}-transit`;
+        const nextImg = el.querySelector(`.${imgClass}[data-id='${nextId}']`);
+        const nextText = el.querySelector(`.${textClass}[data-id='${nextId}']`);
+        let outClass = '';
+        let inClass = '';
+        this.animationStopped = true;
+        nextText.classList.add(activeTextClass);
+        el.style.setProperty('--from-left', nextId);
+        currentImg.classList.remove(activeImgClass);
+        currentImg.classList.add(subActiveClass);
+        if (currentId < nextId) {
+            outClass = `${imgClass}-next`;
+            inClass = `${imgClass}-prev`;
+            } else {
+            outClass = `${imgClass}-prev`;
+            inClass = `${imgClass}-next`;
+        }
+        nextImg.classList.add(outClass);
+        requestAnimationFrame(() => {
+            nextImg.classList.add(transitClass, activeImgClass);
+            nextImg.classList.remove(outClass);
+            this.animationStopped = false;
+            this.positionImage(this.getMouseCoefficients());
+            currentImg.classList.add(transitClass, inClass);
+            currentImg.addEventListener('transitionend', onImageTransitionEnd);
+        });
+        if (!this.isMobile)
+        this.switchBackgroundImage(nextId);
+    }
+    startTransition (nextId) {
+        function onTextTransitionEnd(e) {
+            if (!e.pseudoElement) {
+                e.stopPropagation();
+                requestAnimationFrame(() => {
+                    self.transitionItem(nextId);
+                });
+                this.removeEventListener('transitionend', onTextTransitionEnd);
+            }
+        }
+        if (this.inTransit) return;
+        const activeText = this.activeText[0];
+        const backwardsClass = `${this.TEXT_CLASS}-backwards`;
+        const self = this; 
+        this.inTransit = true;
+        activeText.classList.add(backwardsClass);
+        activeText.classList.remove(this.ACTIVE_TEXT_CLASS);
+        activeText.addEventListener('transitionend', onTextTransitionEnd);
+        requestAnimationFrame(() => {
+            activeText.classList.remove(backwardsClass);
+        });
+    }
+    next () {
+        if (this.inTransit) return;
+        let nextId = +this.activeImg[0].dataset.id + 1;
+        if (nextId > this.length)
+        nextId = 1;
+        this.startTransition(nextId);
+    }
+    prev () {
+        if (this.inTransit) return;
+        let nextId = +this.activeImg[0].dataset.id - 1;
+        if (nextId < 1)
+        nextId = this.length;
+        this.startTransition(nextId);
+    }
+    switchBackgroundImage (nextId) {
+        function onBackgroundTransitionEnd (e) {
+            if (e.target === this) {
+                this.style.setProperty('--img-prev', imageUrl);
+                this.classList.remove(bgClass);
+                this.removeEventListener('transitionend', onBackgroundTransitionEnd);
+            }
+        }
+        const bgClass = 'slider--bg-next';
+        const el = this.el;
+        const imageUrl = `url(${this.images[+nextId - 1].src})`;
+        el.style.setProperty('--img-next', imageUrl);
+        el.addEventListener('transitionend', onBackgroundTransitionEnd);
+        el.classList.add(bgClass);
+    }
+}
+const sliderEl = document.getElementById('slider');
+const slider = new Slider(sliderEl);
+let timer = 0;
+function autoSlide () {
+    requestAnimationFrame(() => {
+        slider.next();
     });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    userDataContainer.appendChild(table);
+    timer = setTimeout(autoSlide, 4000);
 }
-
-function clearUserData() {
-    localStorage.removeItem("userDataArray");
-    displayUserData();
+function stopAutoSlide () {
+    clearTimeout(timer);
+    this.removeEventListener('touchstart', stopAutoSlide);
+    this.removeEventListener('mousemove', stopAutoSlide);  
 }
-
-function updateCharCount() {
-    var charCount = document.getElementById("charCount");
-    var message = document.getElementById("message");
-    charCount.textContent = "Осталось символов: " + (200 - message.value.length);
-}
-
-document.getElementById("message").addEventListener("input", updateCharCount);
-
-//Очистка ошибок при вводе в форму
-document.getElementById("name").addEventListener("input", clearErrors);
-document.getElementById("email").addEventListener("input", clearErrors);
-document.getElementById("message").addEventListener("input", clearErrors);
-document.getElementById("subject").addEventListener("input", clearErrors);
-
-function clearErrors() {
-    displayErrors([]);
-}
+sliderEl.addEventListener('mousemove', stopAutoSlide);
+sliderEl.addEventListener('touchstart', stopAutoSlide);
+timer = setTimeout(autoSlide, 4000); 

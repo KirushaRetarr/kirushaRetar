@@ -1,0 +1,42 @@
+
+.secret-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.secret-button {
+    height: 60px;
+    width: 120px;
+}
+
+.hidden {
+    display: none;
+}
+
+.lab15-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    margin-top: 50px;
+
+    font-family: "Overpass Mono", monospace;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+    border: 1px solid #7875fe;
+    
+    width: 40%;
+}

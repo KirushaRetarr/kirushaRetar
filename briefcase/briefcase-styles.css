@@ -207,7 +207,6 @@ main {
 
 /*Лабораторная работ #9*/
 .add-transaction {
-  transform: rotate(10deg);
   width: 160px;
 }
 
@@ -248,9 +247,6 @@ main {
   padding: 10px;
 
   font-family: "Overpass Mono", monospace;
-
-  transform: translate(50px);
-
 }
 
 /*Стилизация графика*/

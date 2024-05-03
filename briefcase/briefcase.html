@@ -7,19 +7,29 @@
     <link rel="shortcut icon" href="../img/Mini-icon.png" title="kosonicon" />
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./briefcase-styles.css" />
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
     <!--Шапка сайта-->
     <header>
       <div class="upper-header">
         <div class="upper-header__left-buttons">
-          <button>Язык</button>
-          <button>Валюта</button>
-          <button>Тема</button>
+          <select class="submenu">
+            <option value="russian">Русский</option>
+            <option value="english">Английский</option>
+            <option value="english">Испанский</option>
+          </select>
+          <select class="submenu">
+            <option value="dollar">Доллары</option>
+            <option value="tenge">Тенге</option>
+          </select>
+          <select class="submenu">
+            <option value="white">Светлая</option>
+            <option value="black">Темная</option>
+          </select>
         </div>
         <div class="upper-header__right-buttons">
-          <a href="../auth/auth.html"><button>Войти</button></a>
-          <a href="../auth/auth.html"><button>Регистрация</button></a>
+          <a href="../registration/reg.html"><button>Регистрация</button></a>
         </div>
       </div>
       <div class="lower-header">
@@ -27,8 +37,9 @@
           ><a href="../index.html"><img src="../img/Logo.png" alt="Логотип" /></a
         ></picture>
         <div class="lower-header__buttons-search">
-          <a href="../index.html"><button>На главную</button></a>
-          <button>Избранное</button>
+          <a href="../map/map.html"><button>Карта</button></a>
+          <a href="../briefcase/briefcase.html"><button>Портфель</button></a>
+          <a href="../404.html"><button>Избранное</button></a>
           <form>
             <input type="text" />
             <button class="button-search" type="submit">
