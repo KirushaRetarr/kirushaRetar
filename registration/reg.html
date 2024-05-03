@@ -12,60 +12,112 @@
   <body>
     <!--Шапка сайта-->
     <header>
-      <div class="upper-header">
-        <div class="upper-header__left-buttons">
-          <select class="submenu">
-            <option value="russian">Русский</option>
-            <option value="english">Английский</option>
-            <option value="english">Испанский</option>
-          </select>
-          <select class="submenu">
-            <option value="dollar">Доллары</option>
-            <option value="tenge">Тенге</option>
-          </select>
-          <select class="submenu">
-            <option value="white">Светлая</option>
-            <option value="black">Темная</option>
-          </select>
-        </div>
-        <div class="upper-header__right-buttons">
-          <a href="../registration/reg.html"><button>Регистрация</button></a>
-        </div>
-      </div>
       <div class="lower-header">
         <picture
           ><a href="../index.html"><img src="../img/Logo.png" alt="Логотип" /></a
         ></picture>
         <div class="lower-header__buttons-search">
-          <a href="../map/map.html"><button>Карта</button></a>
-          <a href="../briefcase/briefcase.html"><button>Портфель</button></a>
-          <a href="../404.html"><button>Избранное</button></a>
+          <div class="dropdown settings">
+            <button class="dropbtn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.0"
+                width="100%"
+                height="100%"
+                viewBox="0 0 512.000000 512.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <g
+                  transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                  fill="#222"
+                  stroke="none"
+                >
+                  <path
+                    d="M1980 5099 c-111 -50 -121 -74 -175 -444 -25 -168 -45 -309 -45 -313 0 -4 -30 -22 -66 -40 -36 -18 -109 -60 -162 -94 -53 -34 -104 -61 -112 -60 -8 0 -139 51 -290 112 -151 61 -294 113 -317 117 -68 9 -131 -14 -183 -67 -31 -32 -124 -184 -300 -491 l-255 -444 0 -77 c0 -69 3 -80 30 -119 19 -27 123 -116 270 -231 l240 -187 2 -200 2 -199 -241 -188 c-132 -103 -253 -205 -269 -227 -32 -44 -44 -106 -35 -170 5 -31 79 -167 266 -492 143 -247 270 -459 282 -473 40 -42 98 -66 163 -66 54 -1 89 11 344 113 156 63 289 114 295 114 6 0 49 -25 96 -55 47 -31 120 -73 163 -94 42 -21 77 -42 77 -46 0 -5 20 -145 45 -313 54 -369 64 -394 175 -444 43 -20 63 -21 580 -21 l535 0 51 24 c60 28 108 83 122 140 6 22 29 171 52 331 23 159 42 291 43 291 1 1 35 18 76 39 40 20 112 62 160 92 47 31 93 56 101 55 8 0 139 -51 290 -112 151 -61 294 -113 317 -117 68 -9 131 14 183 67 31 32 122 180 292 476 136 236 251 442 257 457 26 68 6 174 -42 225 -12 13 -128 107 -258 209 l-236 184 0 199 0 199 236 184 c130 102 246 196 258 209 50 53 69 161 39 231 -21 51 -494 868 -525 907 -45 57 -105 85 -181 84 -59 -1 -92 -12 -350 -117 l-285 -116 -90 59 c-49 32 -125 76 -167 96 -43 21 -78 42 -78 45 0 4 -20 145 -44 312 -54 370 -64 395 -176 446 -43 20 -63 21 -580 21 -517 0 -537 -1 -580 -21z m1081 -207 c4 -4 28 -155 54 -337 27 -196 52 -339 61 -352 8 -13 69 -50 136 -84 108 -53 228 -126 296 -180 50 -39 64 -36 383 85 167 63 316 119 330 124 25 10 27 7 267 -407 132 -229 244 -424 247 -432 4 -11 -65 -71 -257 -221 -145 -113 -270 -214 -278 -223 -20 -24 -23 -569 -3 -602 7 -12 132 -115 278 -229 180 -141 264 -212 260 -222 -15 -39 -501 -851 -510 -852 -6 0 -152 57 -324 126 -237 94 -321 124 -340 119 -14 -4 -71 -37 -127 -75 -55 -38 -155 -96 -222 -129 -67 -34 -128 -71 -136 -84 -8 -12 -39 -174 -69 -360 -31 -187 -57 -340 -59 -341 -2 -1 -226 0 -498 3 l-494 6 -49 335 c-28 195 -55 344 -63 357 -8 13 -69 50 -136 84 -107 53 -212 117 -300 182 -16 12 -42 20 -65 19 -23 0 -158 -46 -353 -120 l-315 -120 -16 27 c-34 54 -469 810 -474 823 -4 10 80 82 260 222 146 114 271 217 278 229 20 34 17 578 -3 602 -8 10 -131 112 -273 228 -142 116 -257 216 -255 223 6 26 493 843 503 844 6 0 152 -57 324 -126 231 -92 321 -124 339 -119 14 3 75 39 136 80 61 40 162 99 223 129 62 31 119 66 127 79 8 12 37 163 66 337 27 173 53 326 55 340 l5 25 493 -3 c270 -2 495 -7 498 -10z"
+                  />
+                  <path
+                    d="M2455 3620 c-410 -41 -770 -325 -903 -715 -73 -215 -73 -475 0 -690 122 -355 426 -621 803 -700 106 -22 304 -22 410 0 432 91 748 406 840 840 23 107 23 303 0 410 -68 322 -261 583 -539 731 -190 101 -403 144 -611 124z m362 -249 c107 -35 136 -49 218 -104 91 -62 171 -143 234 -238 189 -282 189 -656 0 -938 -117 -175 -268 -286 -479 -352 -65 -20 -96 -24 -230 -23 -122 0 -168 4 -215 18 -275 84 -476 262 -574 508 -190 476 79 1011 574 1142 92 24 101 25 245 21 119 -3 146 -7 227 -34z"
+                  />
+                </g>
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="../map/map.html">Светлая тема</a>
+              <a href="../briefcase/briefcase.html">Темная тема</a>
+            </div>
+          </div>
+          <div class="dropdown main-func">
+            <button class="dropbtn">Основные функции</button>
+            <div class="dropdown-content">
+              <a href="../map/map.html">Карта</a>
+              <a href="../briefcase/briefcase.html">Портфель</a>
+              <a href="../404.html">Избранное</a>
+            </div>
+          </div>
           <form>
             <input type="text" />
             <button class="button-search" type="submit">
-              <img src="../img/Search.png" alt="Лупа" />
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" height="100%" viewBox="0 0 32.000000 32.000000" preserveAspectRatio="xMidYMid meet">
+
+                <g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" fill="#222" stroke="none">
+                <path d="M75 311 c-74 -33 -96 -133 -41 -190 35 -36 81 -47 129 -31 35 11 36 10 83 -40 62 -66 70 -56 10 13 l-46 54 16 32 c35 70 -14 158 -92 167 -21 2 -48 0 -59 -5z m116 -40 c64 -65 20 -171 -71 -171 -58 0 -100 42 -100 100 0 91 106 135 171 71z"/>
+                </g>
+                </svg>
             </button>
           </form>
+          <div class="dropdown profile">
+            <button class="dropbtn">
+              <svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 512.000000 512.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <g
+                  transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                  fill="#222"
+                  stroke="none"
+                >
+                  <path
+                    d="M2440 4704 c-331 -49 -601 -226 -761 -500 -57 -98 -81 -156 -111 -264 -20 -73 -23 -108 -23 -255 0 -205 17 -281 100 -450 219 -448 720 -669 1202 -529 267 77 498 267 620 509 78 154 103 253 110 435 6 174 -13 286 -73
+427 -115 272 -325 472 -600 572 -133 49 -340 73 -464 55z m315 -225 c285 -68
+513 -291 597 -584 31 -109 31 -303 0 -416 -22 -82 -75 -196 -125 -268 -71
+-104 -208 -216 -331 -271 -123 -54 -179 -65 -341 -64 -141 0 -156 2 -245 32
+-267 89 -469 302 -542 571 -30 111 -31 307 -1 413 73 253 221 429 455 537 167
+78 346 95 533 50z"
+                  />
+                  <path
+                    d="M2165 2449 c-964 -98 -1704 -875 -1752 -1841 l-6 -127 35 -35 36 -36
+2071 0 c2277 0 2113 -5 2146 60 18 34 19 112 4 248 -87 804 -651 1466 -1423
+1672 -205 55 -279 62 -666 65 -195 2 -395 -1 -445 -6z m854 -215 c572 -84
+1047 -426 1306 -942 93 -185 158 -410 171 -594 l7 -88 -1943 0 -1943 0 7 87
+c8 114 37 248 81 381 154 460 513 846 962 1035 163 69 257 94 493 130 14 3
+189 5 389 6 283 1 387 -2 470 -15z"
+                  />
+                </g>
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="../auth/auth.html">Войти</a>
+              <a href="../registration/reg.html">Регистрация</a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
     <main>
       <div class="auth-wrapper">
         <div class="auth-window">
-          <form id="loginForm">
-            <label for="username">Username:</label><br />
-            <input type="text" id="username" name="username" /><br />
-            <label for="password">Password:</label><br />
-            <input type="password" id="password" name="password" /><br />
-            <label for="secretWord">Secret Word:</label><br />
-            <input type="text" id="secretWord" name="secretWord" /><br /><br />
-            <button type="submit">Submit</button>
-          </form>
-          <div id="secretData" style="display: none">
-            <h2>Secret Data</h2>
-            <p id="dataFromCookie"></p>
+          <span>Регистрация</span>
+          <input type="text" placeholder="Введите логин"/>
+          <input type="text" placeholder="Введите пароль"/>
+          <input type="text" placeholder="Введите секретное слово"/>
+          <div class="auth-buttons">
+            <button>Войти</button>
+            <button class="register">Зарегистрироваться</button>
           </div>
-          <button id="showDataButton" type="button">Show Secret Data</button>
         </div>
       </div>
     </main>
