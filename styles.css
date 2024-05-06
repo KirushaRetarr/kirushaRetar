@@ -11,10 +11,6 @@
 
 /*Cтилизация главного фона сайта*/
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--main-bg-color);
 }
 
