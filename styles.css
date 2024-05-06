@@ -67,7 +67,7 @@ header {
 }
 
 /*Логотип*/
-.lower-header picture {
+.header-logo-a {
   padding: 20px;
   height: 50px;
 }
@@ -156,6 +156,11 @@ header {
 
 /*Cтилизация основного контента*/
 main {
+  height: 100%;
+  width: 100%;
+}
+
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
