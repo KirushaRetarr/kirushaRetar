@@ -254,21 +254,32 @@ sliderEl.addEventListener("mousemove", stopAutoSlide);
 sliderEl.addEventListener("touchstart", stopAutoSlide);
 timer = setTimeout(autoSlide, 4000);
 
-// Меню
-var dropdownBtn2 = document.getElementById("submenu-button-2");
-var dropdownBtn = document.getElementById("submenu-button");
-var dropdownMenu = document.getElementById("dropdown-menu");
-var dropdownMenu2 = document.getElementById("dropdown-menu-2");
-var dropdownMenu3 = document.getElementById("dropdown-menu-3");
-var dropdownMenu4 = document.getElementById("dropdown-menu-4");
+// Темы сайта
+// Функция для переключения на светлую тему
+function switchToLightTheme() {
+  document.documentElement.style.setProperty('--main-bg-color', '#ffffff');
+  document.documentElement.style.setProperty('--main-button-color', '#7875fe');
+  document.documentElement.style.setProperty('--casual-text-color', '#000000');
+  document.documentElement.style.setProperty('--hover-text-color', '#7875fe');
+  document.documentElement.style.setProperty('--lines-color', '#c0c0c0');
+}
 
-// Обработчик события нажатия на кнопку
-dropdownBtn.addEventListener("click", function () {
-  dropdownMenu.classList.toggle("active");
-  dropdownMenu2.classList.toggle("active");
+// Функция для переключения на темную тему
+function switchToDarkTheme() {
+  document.documentElement.style.setProperty('--main-bg-color', '#1c1c1c');
+  document.documentElement.style.setProperty('--main-button-color', '#fff');
+  document.documentElement.style.setProperty('--casual-text-color', '#ffffff');
+  document.documentElement.style.setProperty('--hover-text-color', '#7875fe');
+  document.documentElement.style.setProperty('--lines-color', '#fff');
+}
+
+var lightThemeLink = document.getElementById("light-theme");
+var darkThemeLink = document.getElementById("dark-theme");
+
+lightThemeLink.addEventListener("click", function() {
+  switchToLightTheme();
 });
 
-dropdownBtn2.addEventListener("click", function () {
-  dropdownMenu3.classList.toggle("active");
-  dropdownMenu4.classList.toggle("active");
+darkThemeLink.addEventListener("click", function() {
+  switchToDarkTheme();
 });
